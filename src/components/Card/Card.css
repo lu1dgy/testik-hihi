@@ -4,31 +4,59 @@
   position: relative;
   gap: 75px;
   width: 300px;
-  list-style-type: none;
+  min-height: 250px;
+  /* Унифицированная минимальная высота */
 }
 
 .card__item {
   border: 3px grey solid;
   padding: 20px;
-  min-height: 200px;
+  min-height: 250px;
   border-radius: 15px;
   background: linear-gradient(135deg, #2564a7, #1a3d6d, #4a90e2);
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .card__heading {
   font-size: 32px;
   letter-spacing: 1.4px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   font-size: 24px;
   list-style-type: none;
-  margin-bottom: 100px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* Скрываем лишние элементы */
+  max-height: 80px;
+  /* Начальная высота для 2 элементов */
+  transition: max-height 0.5s ease-in-out;
+  /* Плавное открытие/закрытие */
+}
+
+.list--expanded {
+  max-height: 500px;
+  /* Высота для всех элементов */
+}
+
+.list--collapsed {
+  max-height: 80px;
+  /* Высота для свернутого состояния */
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .list__smile {
@@ -42,29 +70,9 @@
   height: 40px;
   border: 2px solid #fff;
   color: #fff;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
   border-radius: 10px;
   letter-spacing: 1.9px;
   font-size: 11px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* Добавление плавного эффекта раскрытия списка */
-.list {
-  max-height: 100px;
-  /* Начальная высота */
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
-}
-
-.list--expanded {
-  max-height: 500px;
-  /* Увеличьте до достаточного размера, чтобы вместить весь контент */
-}
-
-.list--collapsed {
-  max-height: 100px;
-  /* Высота в свернутом состоянии */
+  align-self: flex-end;
 }
