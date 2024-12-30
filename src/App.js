@@ -4,7 +4,7 @@ import './App.css';
 import CardList from './components/CardList';
 import NavBar from './components/NavBar';
 import vremeno from './components/vremeno';
-import SwipeHandler from './SwipeHandler'; // Импорт нового компонента
+import SwipeHandler from './SwipeHandler';
 
 function App() {
   return (

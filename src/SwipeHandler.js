@@ -8,13 +8,13 @@ const SwipeHandler = () => {
       // Монтируем компонент
       swipeBehavior.mount();
 
-      // Включаем вертикальные свайпы
-      if (swipeBehavior.enableVertical.isAvailable()) {
-        swipeBehavior.enableVertical();
-        console.log('Vertical swipe enabled');
+      // Отключаем вертикальные свайпы, чтобы избежать закрытия приложения
+      if (swipeBehavior.disableVertical.isAvailable()) {
+        swipeBehavior.disableVertical();
+        console.log('Vertical swipe disabled');
       }
 
-      // Вызывается при размонтировании
+      // При размонтировании очищаем настройки
       return () => {
         swipeBehavior.unmount();
         console.log('Swipe behavior unmounted');
@@ -24,7 +24,7 @@ const SwipeHandler = () => {
     }
   }, []);
 
-  return null; // Компонент не рендерит ничего визуального
+  return null; // Компонент не отображает UI
 };
 
 export default SwipeHandler;
