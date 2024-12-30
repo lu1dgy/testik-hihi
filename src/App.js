@@ -7,11 +7,13 @@ import vremeno from './components/vremeno';
 
 function App() {
   useEffect(() => {
-    if (window.Telegram?.WebApp) {
-      const webApp = window.Telegram.WebApp;
-      webApp.expand(); // Развернуть приложение
-      document.body.style.minHeight = `${webApp.viewportHeight}px`;
-    }
+    const preventDefault = (e) => e.preventDefault();
+
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+
+    return () => {
+      document.removeEventListener('touchmove', preventDefault);
+    };
   }, []);
 
   return (
@@ -19,8 +21,8 @@ function App() {
       <div className='App'>
         <Routes>
           <Route path='/' element={<CardList />} />
-          <Route path='/page2' element={<vremeno />} />
-          <Route path='/page3' element={<vremeno />} />
+          <Route path='/page2' element={vremeno} />
+          <Route path='/page3' element={vremeno} />
         </Routes>
         <NavBar />
       </div>
