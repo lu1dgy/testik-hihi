@@ -3,7 +3,7 @@
   flex-direction: column;
   position: relative;
   gap: 75px;
-  width: calc(100% - 40px);
+  width: calc(100% - 30px);
   min-height: 250px;
   /* Унифицированная минимальная высота */
 }
