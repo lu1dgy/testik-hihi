@@ -1,20 +1,39 @@
 import React from 'react';
 import Card from '../Card';
+import './CardList.css';
 
 const cardsData = [
   {
     heading: 'Мастера приёмщики',
-    items: ['Elem', 'Elem'],
+    items: [
+      'Принято сегодня',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+      'Принято всего',
+    ],
   },
   {
     heading: 'Сотрудники сервиса',
-    items: ['Employee1', 'Employee2', 'Employee3'],
+    items: ['Принято сегодня', 'Принято всего'],
+  },
+  {
+    heading: 'Мастера цеха',
+    items: ['Принято сегодня', 'Принято всего'],
   },
 ];
 
 const CardList = () => {
   return (
-    <ul>
+    <ul className='cardList'>
       {cardsData.map((card, index) => (
         <Card key={index} heading={card.heading} items={card.items} />
       ))}
