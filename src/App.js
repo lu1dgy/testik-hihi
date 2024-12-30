@@ -4,13 +4,11 @@ import './App.css';
 import CardList from './components/CardList';
 import NavBar from './components/NavBar';
 import vremeno from './components/vremeno';
-import SwipeHandler from './SwipeHandler';
 
 function App() {
   return (
     <Router>
       <div className='App'>
-        <SwipeHandler /> {/* Управление свайпами */}
         <Routes>
           <Route path='/' element={<CardList />} />
           <Route path='/page2' element={vremeno} />
